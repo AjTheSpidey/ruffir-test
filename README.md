@@ -1,3 +1,2 @@
 # ruffir-test
-test
-test made by AjTheSpidey(ATS)
+For Algoritmics purposes only - By AjTheSpidey(ATS)
