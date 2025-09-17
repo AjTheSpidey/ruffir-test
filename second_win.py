@@ -1,5 +1,5 @@
 from instr import *
-from final_win import FinalWin
+from final_win import *
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QLineEdit, QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QLabel
 
@@ -71,4 +71,4 @@ class TestWin(QWidget):
         self.sendresults.clicked.connect(self.next_click)
     def next_click(self):
         self.hide()
-        self.tw = final_win.FinalWin()
+        self.tw = FinalWin()
