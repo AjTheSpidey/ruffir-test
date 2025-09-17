@@ -2,8 +2,6 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QLineEdit, QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QLabel, QLineEdit
 from instr import *
 
-name = QLineEdit(txt_hintname)
-
 class TestWin(QWidget):
     def __init__(self):
         super().__init__()
@@ -31,5 +29,5 @@ class TestWin(QWidget):
         pass
 
 app = QApplication([])
-mw = MainWin()
+mw = TestWin()
 app.exec_()
