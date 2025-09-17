@@ -25,7 +25,3 @@ class FinalWin(QWidget):
         self.setLayout(self.layout)
     def connects(self):
         pass
-
-app = QApplication([])
-mw = FinalWin()
-app.exec_()

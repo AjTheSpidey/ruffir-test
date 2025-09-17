@@ -1,6 +1,7 @@
+from instr import FinalWin
+from final_win import *
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QLineEdit, QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QLabel, QLineEdit
-from instr import *
+from PyQt5.QtWidgets import QApplication, QLineEdit, QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QLabel
 
 class TestWin(QWidget):
     def __init__(self):
@@ -54,8 +55,8 @@ class TestWin(QWidget):
         self.hinttest2 = QLineEdit("0")
         self.l_line.addWidget(self.hinttest2, alignment = Qt.AlignLeft)
 
-        self.hinttest2 = QLineEdit("0")
-        self.l_line.addWidget(self.hinttest2, alignment = Qt.AlignLeft)
+        self.hinttest3 = QLineEdit("0")
+        self.l_line.addWidget(self.hinttest3, alignment = Qt.AlignLeft)
 
         self.sendresults = QPushButton(txt_sendresults)
         self.l_line.addWidget(self.sendresults, alignment = Qt.AlignCenter)
@@ -70,4 +71,4 @@ class TestWin(QWidget):
         self.sendresults.clicked.connect(self.next_click)
     def next_click(self):
         self.hide()
-        self.tw = FinalWin()
+        self.tw = final_win.FinalWin()
