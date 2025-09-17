@@ -1,8 +1,8 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QLineEdit, QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QLabel, QLineEdit
+from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QLabel
 from instr import *
 
-class TestWin(QWidget):
+class FinalWin(QWidget):
     def __init__(self):
         super().__init__()
         self.set_appear()
@@ -17,9 +17,15 @@ class TestWin(QWidget):
         self.layout = QVBoxLayout()
 
         self.index = QLabel(txt_index)
-        self.l_line.addWidget(self.index, alignment = Qt.AlignLeft)
+        self.layout.addWidget(self.index, alignment = Qt.AlignCenter)
 
         self.workheart = QLabel(txt_workheart)
-        self.l_line.addWidget(self.workheart, alignment = Qt.AlignLeft)
+        self.layout.addWidget(self.workheart, alignment = Qt.AlignCenter)
 
         self.setLayout(self.layout)
+    def connects(self):
+        pass
+
+app = QApplication([])
+mw = FinalWin()
+app.exec_()

@@ -5,7 +5,7 @@ win_width, win_height = 1000, 600
 
 txt_hello = 'dummy'
 txt_next = 'y'
-txt_instruction = "This application allows you to use the Rufier test to make an initial diagnosis of your health. The Rufier test is a set of physical exercises designed to assess your cardiac performance during physical exertion. The subject lies in the supine position for 5 minutes and has their pulse rate measured for 15 seconds; then, within 45 seconds, the subject performs 30 squats. When the exercise ends, the subject lies down and their pulse is measured again for the first 15 seconds and then for the last 15 seconds of the first minute of the recovery period. Important! If you feel unwell during the test (dizziness, tinnitus, shortness of breath, etc.), stop the test and consult a physician." 
+txt_instruction = "This application allows you to use the Rufier test to make an initial diagnosis of your health.\nThe Rufier test is a set of physical exercises designed to assess your cardiac performance during physical exertion.\nThe subject lies in the supine position for 5 minutes and has their pulse rate measured for 15 seconds;\nthen, within 45 seconds, the subject performs 30 squats.\nWhen the exercise ends, the subject lies down and their pulse is measured again for the first 15 seconds\nand then for the last 15 seconds of the first minute of the recovery period.\nImportant! If you feel unwell during the test (dizziness,\ntinnitus, shortness of breath, etc.), stop the test and consult a physician." 
 txt_name = 'Enter Your full name:'
 txt_hintname = "Full name"
 txt_hintage = "Full years:"
