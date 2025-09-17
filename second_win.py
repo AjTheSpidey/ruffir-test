@@ -67,7 +67,10 @@ class TestWin(QWidget):
         self.h_line.addLayout(self.r_line)
         self.setLayout(self.h_line)
     def connects(self):
-        pass
+        self.sendresults.clicked.connect(self.next_click)
+    def next_click(self):
+        self.hide()
+        self.tw = FinalWin()
 
 app = QApplication([])
 mw = TestWin()
