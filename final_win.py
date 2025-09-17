@@ -10,13 +10,16 @@ class TestWin(QWidget):
         self.connects()
         self.show()
     def set_appear(self):
-        self.setWindowTitle("Results")
+        self.setWindowTitle(txt_finalwin)
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
     def initUI(self):
         self.layout = QVBoxLayout()
 
-        self.txt_name = QLabel(txt_name)
-        self.l_line.addWidget(self.txt_name, alignment = Qt.AlignLeft)
+        self.index = QLabel(txt_index)
+        self.l_line.addWidget(self.index, alignment = Qt.AlignLeft)
+
+        self.workheart = QLabel(txt_workheart)
+        self.l_line.addWidget(self.workheart, alignment = Qt.AlignLeft)
 
         self.setLayout(self.layout)

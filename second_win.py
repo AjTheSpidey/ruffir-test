@@ -71,7 +71,3 @@ class TestWin(QWidget):
     def next_click(self):
         self.hide()
         self.tw = FinalWin()
-
-app = QApplication([])
-mw = TestWin()
-app.exec_()
