@@ -25,3 +25,4 @@ class FinalWin(QWidget):
         self.setLayout(self.layout)
     def connects(self):
         pass
+
