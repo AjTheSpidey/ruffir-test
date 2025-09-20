@@ -6,6 +6,13 @@ from PyQt5.QtWidgets import QApplication, QLineEdit, QPushButton, QHBoxLayout, Q
 
 time = QTime(0, 1, 0)
 
+class Experiment():
+   def __init__(self, age, test1, test2, test3):
+       self.age = age
+       self.t1 = test1
+       self.t2 = test2
+       self.t3 = test3
+
 class TestWin(QWidget):
     def __init__(self):
         super().__init__()
@@ -125,4 +132,5 @@ class TestWin(QWidget):
         self.starttest3.clicked.connect(self.timer_final)
     def next_click(self):
         self.hide()
-        self.tw = FinalWin()
+        self.exp = Experiment (self.age.text(), self.hinttest1.text(), self.hinttest2.text(), self.hinttest3.text())
+        self.tw = FinalWin(self.exp) 
