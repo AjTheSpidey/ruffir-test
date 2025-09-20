@@ -3,8 +3,9 @@ from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget, QLabel
 from instr import *
 
 class FinalWin(QWidget):
-    def __init__(self):
+    def __init__(self, exp):
         super().__init__()
+        self.exp = exp
         self.set_appear()
         self.initUI()
         self.connects()
@@ -25,4 +26,3 @@ class FinalWin(QWidget):
         self.setLayout(self.layout)
     def connects(self):
         pass
-
