@@ -42,6 +42,25 @@ class TestWin(QWidget):
         self.timer_label.setText(time.toString("hh:mm:ss")[6:8])
         if time.toString("hh:mm:ss")[6:8] == "00":
             self.timer.stop()
+    def timer_final(self):
+        global time
+        time = QTime(0, 1, 0)
+        self.timer.disconnect()
+        self.timer.timeout.connect(self.timer3Event)
+        self.timer.start(1000)
+    def timer3Event(self):
+        global time
+        time = time.addSecs(-1)
+        self.timer_label.setText(time.toString("hh:mm:ss"))
+        if int(time.toString("hh:mm:ss")[6:8]) >= 45:
+            self.timer_label.setStyleSheet("color: rgb(0,255,0)")
+        elif int(time.toString("hh:mm:ss")[6:8]) <= 15:
+            self.timer_label.setStyleSheet("color: rgb(0,255,0)")
+        else:
+            self.timer_label.setStyleSheet("color: rgb(0,0,0)")
+
+        if time.toString("hh:mm:ss") == "00:00:00":
+            self.timer.stop()
 
     def initUI(self):
         self.h_line = QHBoxLayout()
@@ -103,10 +122,7 @@ class TestWin(QWidget):
         self.sendresults.clicked.connect(self.next_click)
         self.starttest1.clicked.connect(self.timer_test)
         self.starttest2.clicked.connect(self.timer_sits)
+        self.starttest3.clicked.connect(self.timer_final)
     def next_click(self):
         self.hide()
         self.tw = FinalWin()
-
-app = QApplication([])
-mw = TestWin()
-app.exec_()
