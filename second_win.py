@@ -41,20 +41,21 @@ class TestWin(QWidget):
     def timer_sits(self):
         global time
         time = QTime(0, 0, 30)
-        self.timer.timeout.connect(self.timer2Event)
-        self.timer.start(1500)
+        self.timer2 = QTimer()
+        self.timer2.timeout.connect(self.timer2Event)
+        self.timer2.start(1500)
     def timer2Event(self):
         global time
         time = time.addSecs(-1)
         self.timer_label.setText(time.toString("hh:mm:ss")[6:8])
         if time.toString("hh:mm:ss")[6:8] == "00":
-            self.timer.stop()
+            self.timer2.stop()
     def timer_final(self):
         global time
         time = QTime(0, 1, 0)
-        self.timer.disconnect()
-        self.timer.timeout.connect(self.timer3Event)
-        self.timer.start(1000)
+        self.timer3 = QTimer()
+        self.timer3.timeout.connect(self.timer3Event)
+        self.timer3.start(1000)
     def timer3Event(self):
         global time
         time = time.addSecs(-1)
@@ -67,7 +68,7 @@ class TestWin(QWidget):
             self.timer_label.setStyleSheet("color: rgb(0,0,0)")
 
         if time.toString("hh:mm:ss") == "00:00:00":
-            self.timer.stop()
+            self.timer3.stop()
 
     def initUI(self):
         self.h_line = QHBoxLayout()
